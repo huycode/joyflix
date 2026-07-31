@@ -25,7 +25,11 @@ export async function GET() {
         }
     }
 
-    return Response.json(data);
+    return new Response(JSON.stringify(data), {
+    headers: {
+        "Content-Type": "application/json",
+    },
+});
 }
 
 // export async function GET() {
